@@ -1,0 +1,59 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-base: #07080f;
+  --bg-surface: #0d101e;
+  --bg-elevated: #131726;
+  --bg-card: #161b2e;
+  --bg-hover: #1c2236;
+  --border: #1f2640;
+  --border-bright: #2a3354;
+  --accent: #4f8ef7;
+  --accent-soft: rgba(79, 142, 247, 0.15);
+  --accent-green: #22d3a5;
+  --accent-green-soft: rgba(34, 211, 165, 0.12);
+  --accent-red: #f75f6a;
+  --accent-red-soft: rgba(247, 95, 106, 0.12);
+  --accent-amber: #f5a623;
+  --accent-amber-soft: rgba(245, 166, 35, 0.12);
+  --accent-purple: #a78bfa;
+  --text-primary: #e8ecf5;
+  --text-secondary: #8b93b0;
+  --text-muted: #505878;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --radius: 12px;
+  --radius-lg: 18px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.6);
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 99px; }
+
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+input, select { font-family: inherit; }
+a { text-decoration: none; color: inherit; }
+
+/* Animations */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideIn { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes glow { 0%, 100% { box-shadow: 0 0 8px rgba(247,95,106,0.6); } 50% { box-shadow: 0 0 20px rgba(247,95,106,0.9); } }
+
+.fade-in { animation: fadeIn 0.35s ease forwards; }
+.slide-in { animation: slideIn 0.3s ease forwards; }
